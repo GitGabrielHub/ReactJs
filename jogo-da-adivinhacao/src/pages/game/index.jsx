@@ -24,9 +24,7 @@ const Game = function () {
     const [numberPlayer, setNumberPlayer] = useState()
     const [counter ,setCounter] = useState(0)
     const [time ,setTime] = useState("00:00:00")
-
-    //let time = 0
-
+    
     useEffect(() => {
         showNumberPlayer()
         setFinalGame(numberNotExist())
@@ -90,11 +88,6 @@ const Game = function () {
     function showNumberPlayer() {
         setNumberPlayer(getNumberPlayer())
     }
-
-    // function logConsole() {
-    //     console.log(`INFERIOR = ${inferiorLimit}`)
-    //     console.log(`UPPER = ${upperLimit}`)
-    // }
 
     return (
         <Container flexDirection='column'>
@@ -166,7 +159,7 @@ const Game = function () {
                         disabled={tip3}
                         data-tip=''
                         data-for='form3'
-                        placeholder="O produto dos digitos que compoe o número vocês está pesando. (exemplo: 113 -> 1*1*3 = 6)"
+                        placeholder="O produto dos digitos que compoe o número vocês está pesando. (exemplo: 113 -> 1*1*3 = 3)"
                         width='125px'
                         height='30px'
                         borderWidth='1px'
@@ -179,7 +172,7 @@ const Game = function () {
                     ></Form>
                     <ReactTooltip id='form3' arrowColor='transparent' backgroundColor='#3555AA' effect='solid' place='bottom' multiline={true}>
                         <Span fontSize='.7rem' textAlign='justify'>
-                            O produto dos digitos que compõe<br />o número que vocês está pesando.<br />(exemplo: 113 {`->`} 1*1*3= 6)
+                            O produto dos digitos que compõe<br />o número que vocês está pesando.<br />(exemplo: 113 {`->`} 1*1*3= 3)
                         </Span>
                     </ReactTooltip>
                     <Icon hasText={formTip3 >= 0 && !tip3} onClick={() => { if(formTip3 >= 0 && !tip3) setTip3(true) }}><AiOutlineSend /></Icon>
